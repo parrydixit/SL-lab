@@ -1,0 +1,85 @@
+<html>
+
+<head>
+    <title>
+        Hello Costomer
+
+    </title>
+    <p>
+        LIST OF ITEMS AVAILABLE
+    </p>
+    <input type="radio"> 1: CHEESECAKE
+    <input type="text" placeholder="Select quantiy" id="Q1"><br>
+    <input type="button" placeholder="Submit" id="Submit" value="Submit" onclick="C1()" />
+    <p>Total price is: <span id="result"></span></p>
+
+
+
+    <input type="radio">2: PASTRY
+    <input type="text" placeholder="Select quantiy" id="Q2"><br>
+    <input type="button" id="S2" value="calculate" onclick="C2()">
+    <p>Total: <span id="r2"></span></p>
+
+    <input type="radio">3: ALOO PUFF
+    <input type="text" placeholder="Select quantiy" id="Q3"><br>
+    <input type="button" id="S3" value="calculate" onclick="C3()">
+    <p>Total: <span id="r3"></span></p>
+
+
+    <input type="radio">4: PANEER PUFF
+    <input type="text" placeholder="Select quantiy" id="Q4"><br>
+    <input type="button" id="S3" value="calculate" onclick="C4()">
+    <p>Total price: <span id="r4"></span></p>
+
+    <input type="button" id="S3" value="grand Total" onclick="grand()">
+    <p>Grand Total is: <span id="Tresult"></span></p>
+
+
+    </title>
+</head>
+
+<body>
+    <script>
+        function C1() {
+            a = document.getElementById("Q1").value;
+            z = a * 50;
+            document.getElementById("result").innerHTML = z;
+
+
+        }
+        function C2() {
+            b = document.getElementById("Q2").value;
+            L = b * 60;
+            document.getElementById("r2").innerHTML = L;
+
+
+        }
+        function C3() {
+            c = document.getElementById("Q3").value;
+            M = c * 30;
+            document.getElementById("r3").innerHTML = M;
+
+
+        }
+        function C4() {
+            d = document.getElementById("Q4").value;
+            N = d * 55;
+            document.getElementById("r4").innerHTML = N;
+
+
+        }
+        function grand() {
+            x = z + L + M + N;
+            document.getElementById("Tresult").innerHTML = x;
+        }
+
+    </script>
+    <!--<select name="items" id="item">
+            <option value="Miniature cheesecake">1:Miniature cheesecake</option>
+            <option value="Pastry">2:Pastry</option>
+            <option value="Puffs">3:Puffs</option>
+            <option value="Personal pies">4:Personal pies</option>
+          </select>--->
+</body>
+
+</html>

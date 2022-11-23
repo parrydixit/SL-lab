@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Total Price</title>
+</head>
+<body>
+    <h1 align="center">TOTAL BILLING</h1>
+    Item Name= <input type="text" id="name"><br><br>
+    Item Price= <input type="text" id="Price"><br><br>
+    Item Quantity= <input type="text" id="Quantity"><br><br>
+
+    <input type="button" onclick="calculate()" value="SUBMIT">
+    <p>The total price is: <span id="result"></span></p>
+    <p><input type="button" onclick="but()" value="PAID"></p>
+
+    <script>
+        function calculate(){
+            x=document.getElementById("Price").value
+            y= document.getElementById("Quantity").value
+            res= x*y
+
+            document.getElementById("result").innerHTML= res
+        }
+
+        function but(){
+            alert("Paid")
+        }
+    </script>
+</body>
+</html>

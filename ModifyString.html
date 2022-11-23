@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Conversion</title>
+    <h3>Question 5 - Part A</h3>
+    <p>The input string is: <input type="text" id="String1">
+    <input type="button" onclick="convert()" value="SUBMIT">
+    </p>
+</head>
+<body>
+    <script>
+        function convert(){
+            str1= document.getElementById("String1").value
+            str= str1.split('')
+
+            for(i=0;i<str.length;i++){
+                switch(str[i]){
+                    case " ": break;
+                    case 'z': 'a'; break;
+                    case 'Z': 'A'; break;
+                    default:
+                        str[i]= String.fromCharCode(1+str[i].charCodeAt());
+                }
+
+                switch(str[i]){
+                    case 'a':
+                    case 'e':
+                    case 'i':
+                    case 'o':
+                    case 'u': str[i].toUpperCase();
+                    break;
+                }
+            }
+
+            str= str.join('');
+            document.getElementById("string").innerHTML= str;
+        }
+    </script>
+    Output: <span id="string"></span>
+</body>
+</html>

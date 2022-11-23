@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Validation</title>
+    <h1 align="center">STRING VALIDATION</h1>
+    <p><input type="text" id="String1"></p>
+    <button onclick="caller()">CLICK</button>
+    <p>Output: <span id="result">???</span></p>
+
+</head>
+<body>
+    <script>
+        function letterSurround(str){
+            if(str=='') return "INVALID STRING!!!";
+            if(str[0]>='a'|| str[str.length-1]>='a' || str[0]=='=' || str[0]=='=')
+                return false;
+            for(i=1;i<str.length;i++){
+                if(str[i]>'a'){
+                    if(str[i-1]!='+' || str[i+1]!='+')
+                        return true;
+                }
+            }
+            return false;
+        }
+
+        function caller(){
+            str= document.getElementById('String1').value;
+            document.getElementById('result').innerHTML= letterSurround(str);
+        }
+    </script>
+    
+</body>
+</html>
