@@ -3,6 +3,9 @@ import matplotlib.pyplot as plt
 import pandas as pd
 titanic_df = pd.read_csv('train.csv')
 
+titanic_df.describe()
+titanic_df.info()
+
 
 titanic_df.drop(['Parch','PassengerId','Name','Ticket'], axis=1, inplace=True)
 
