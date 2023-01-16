@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h2>JS 3 practice</h2>
+	<input type="text" id="inptStr" placeholder="Enter string"></input>
+	<br><br>
+	<button id="checkBtn" onclick="check()">Check</button>
+	Output :
+	<span id="res"></span>
+
+	<script>
+		function validate(str){
+			var len = str.length; 
+
+			for(var i = 0; i < len; i++){
+				if (str[0] >= 'a' || str[len-1] >= 'A'){
+					return false ;
+				}
+				if((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z')){
+					if(str[i-1] != '+' || str[i+1] != '+'){
+						return false ;
+					}
+				}
+			}
+			return true ;
+		}
+
+		function check(){
+			var str = document.getElementById("inptStr").value ;
+			document.getElementById("res").innerHTML = validate(str);
+		}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>que 6</title>
+</head>
+<body>
+    <p>
+       ENTER THE STRING <input type="text" id="str"><br><br>
+       ENTER THE SUB-STRING <input type="text" id="sub-str"><br><br>
+       
+       <button onclick="calculate()">SUBMIT</button>
+    </p>
+
+    <div>
+        <p>entered string is:- <span id="res"></span></p>
+        <p>the total digits are:- <span id="res1"></span></p>
+        <p>total white space characters are:- <span id="res2"></span></p>
+        <p>total alphabets are:- <span id="res3"></span></p>
+        <p>Occurences:- <span id="count"></span></p>
+        <p>position of occurence <span id="pos"></span></p>
+    </div>
+
+
+    <script>
+        function calculate(){
+            str1=document.getElementById("str").value
+            str2=document.getElementById("sub-str").value
+
+            document.getElementById("res").innerHTML=str1
+
+            var spc=0,dig=0,alp=0
+
+            for(var i=0;i<str1.length;i++){
+                if(str1[i]==" ")
+                    spc++
+                else if(isNaN(str1[i])!=true)
+                    dig++
+                else
+                    alp++
+            }
+
+            document.getElementById("res1").innerHTML= dig
+            document.getElementById("res2").innerHTML= spc
+            document.getElementById("res3").innerHTML= alp
+
+            var cnt= str1.split(str2).length-1
+            document.getElementById("count").innerHTML= cnt
+
+            var pos= str1.indexOf(str2)
+            document.getElementById("pos").innerHTML= pos
+
+
+        }
+    </script>
+</body>
+</html>
